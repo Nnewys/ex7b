@@ -1,11 +1,8 @@
 function checkSID() {
-  let sid = (document.getElementById("sid").value).trim();
-  if (sid.length == 10) {
-    return true;
-  } else {
-    return false;
+	let sid = document.getElementById("sid").value.trim();
+	let regex = /^\d{10}$/; // ตรวจสอบว่ามีตัวเลข 0-9 เท่านั้น และต้องมีความยาว 10 ตัวอักษร
+	return regex.test(sid); // คืนค่า true ถ้าตรงเงื่อนไข, false ถ้าไม่ตรง
   }
-}
 
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
